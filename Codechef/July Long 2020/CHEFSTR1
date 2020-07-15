@@ -1,0 +1,21 @@
+// CODE OF https://www.codechef.com/JULY20B/problems/CHEFSTR1
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    ios_base::sync_with_stdio(false); cin.tie(NULL);
+    int t;
+    cin>>t;
+    while(t--){
+        long int n,a,s=0,i,x,y;
+        cin>>n;
+        cin>>y;
+        for(i=0;i<n-1;i++){
+            cin>>x;
+            s=s+(abs(x-y)-1);
+            y=x;
+        }
+        cout<<s<<"\n";
+    }
+    return 0;
+}
