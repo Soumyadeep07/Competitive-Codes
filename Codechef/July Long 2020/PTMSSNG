@@ -1,0 +1,33 @@
+// Code of https://www.codechef.com/JULY20B/problems/PTMSSNG
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    ios_base::sync_with_stdio(false); cin.tie(NULL);
+    int t;
+    cin>>t;
+    while(t--){
+        long int n,i,x,y;
+        cin>>n;
+        vector<long int> a,b;
+        for(i=0;i<(4*n)-1;i++){
+            cin>>x>>y;
+            a.push_back(x); b.push_back(y);
+        }
+        sort(a.begin(),a.end()); sort(b.begin(),b.end());
+        long int ansa=a[4*n-2],ansb=b[4*n-2];
+        for(i=0;i<(4*n)-2;i+=2){
+            if(a[i]!=a[i+1]){
+                ansa=a[i];
+                break;
+            }
+        }
+        for(i=0;i<(4*n)-2;i+=2){
+            if(b[i]!=b[i+1]){
+                ansb=b[i];
+                break;
+            }
+        }
+        cout<<ansa<<" "<<ansb<<"\n";
+    }
+}
