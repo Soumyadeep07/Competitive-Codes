@@ -1,0 +1,29 @@
+// C++ code for Array Rotation
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    ios_base::sync_with_stdio(false); cin.tie(NULL);
+    int n,d,i;
+    // n= no of array elements, d= no of rotations
+    cin>>n>>d;
+    int a[n],b[n];
+    for(i=0;i<n;i++) {
+        cin>>a[i]; b[i]=0;
+    }
+    d=d%n;
+    // For left rotation <- d times
+    for(i=0;i<n;i++){
+        int x=(i+d)%n;
+        // OUTPUT OF LEFT ROTATION
+        cout<<a[x]<<" ";
+    } 
+    cout<<"\n";
+    // for right rotation -> d times
+    d=(n-d);
+     for(i=0;i<n;i++){
+        int x=(i+d)%n;
+        // OUTPUT OF RIGHT ROTATION
+        cout<<a[x]<<" ";
+    } 
+    cout<<"\n";
+}
