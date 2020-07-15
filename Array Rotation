@@ -6,9 +6,9 @@ int main(){
     int n,d,i;
     // n= no of array elements, d= no of rotations
     cin>>n>>d;
-    int a[n],b[n];
+    int a[n];
     for(i=0;i<n;i++) {
-        cin>>a[i]; b[i]=0;
+        cin>>a[i];
     }
     d=d%n;
     // For left rotation <- d times
