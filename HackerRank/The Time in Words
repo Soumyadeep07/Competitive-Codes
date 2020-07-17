@@ -1,0 +1,40 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the timeInWords function below.
+def timeInWords(h, m):
+                    # !!!!! START OF MY CODE !!!!! #
+                    
+    time = ['one minute','two minutes','three minutes','four minutes','five minutes','six minutes','seven minutes','eight minutes','nine minutes','ten minutes','eleven minutes',
+            'twelve minutes','thirteen minutes','fourteen minutes','quarter','sixteen minutes','seventeen minutes','eighteen minutes','ninteen minutes','twenty minutes',
+            'twenty one minutes','twenty two minutes','twenty three minutes','twenty four minutes','twenty five minutes',
+            'twenty six minutes','twenty seven minutes','twenty eight minutes','twenty nine minutes','half']
+    ans=""
+    hour=['one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve']
+    if m<=30:
+        if m==0: ans=hour[h-1]+" o' clock"
+        else: ans=time[m-1]+" past "+hour[h-1]
+    else:
+        new_min=60-m
+        new_hour=(h+1)%12
+        ans=time[new_min-1]+" to "+hour[new_hour-1]
+    return ans
+                     # !!!!! END OF MY CODE !!!!! #
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    h = int(input())
+
+    m = int(input())
+
+    result = timeInWords(h, m)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
