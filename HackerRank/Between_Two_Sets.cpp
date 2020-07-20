@@ -1,5 +1,5 @@
+// C++ CODE FOR THIS QUESTION
 #include <bits/stdc++.h>
-
 using namespace std;
 
 string ltrim(const string &);
