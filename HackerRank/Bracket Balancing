@@ -1,0 +1,47 @@
+# PYTHON CODE TO CHECK WHETHER BRACKETS ARE BALANCED OR NOT
+# ONLY ALLOWED CHARACTERS - [,{,(,},],)
+
+def isBalanced(s):
+    n=len(s)
+    a,f=[],90
+    for i in range(n):
+        if s[i]=='(' or s[i]=='{' or s[i]=='[':
+            a.append(s[i])
+        else:
+            if len(a)==0:
+                f=7
+                break
+            else:
+                x=a.pop()
+                #print("Popped",x,"appended",s[i])
+                if x=='(':
+                    if s[i]==']' or s[i]=='}':
+                        f=7
+                        break
+                if x=='{':
+                    if s[i]==']' or s[i]==')':
+                        f=7
+                        break
+                if x=='[':
+                    if s[i]==')' or s[i]=='}':
+                        f=7
+                        break
+            #print(a)
+    if f==7: return "NO"
+    else: 
+        if len(a)==0: return "YES"
+        else: return "NO"
+        
+if __name__=="__main__":
+    # INPUT NO OF TEST CASES
+    for _ in range(int(input())):
+          # STRING INPUT
+          s=input()
+          print(isBalanced(s))
+        
+     ### SAMPLE TEST CASES
+     #  4
+     #  {[()]} -> OUTPUT YES
+     #  )(     -> OUTPUT NO
+     #  ([]    -> OUTPUT NO
+     #  ()[]{} -> OUTPUT YES
