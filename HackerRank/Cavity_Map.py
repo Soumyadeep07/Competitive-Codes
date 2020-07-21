@@ -8,6 +8,9 @@ import sys
 
 # Complete the cavityMap function below.
 def cavityMap(grid):
+    
+                                     # ***** START OF MY CODE ***** #
+        
     n=len(grid)
     ans=[]        # 2D ARRAY TO STORE RESULT
     for i in range(n):
@@ -19,8 +22,9 @@ def cavityMap(grid):
                 else: row+=grid[i][j]
             else: row+=grid[i][j]
         ans.append(row)
-        
     return ans
+
+                                     # ****** END OF MY CODE ****** #
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
